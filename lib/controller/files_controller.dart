@@ -5,7 +5,6 @@ import 'package:file_manager_app/utils/const.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:storage_info/storage_info.dart';
 
 class FilesController extends GetxController {
@@ -31,54 +30,6 @@ class FilesController extends GetxController {
   Future<void> _getSpace() async {
     deviceAvailableSize = await StorageInfo.getStorageFreeSpaceInGB;
     deviceTotalSize = await StorageInfo.getStorageTotalSpaceInGB + 10;
-    update();
-  }
-
-  calculateSize(List<FileSystemEntity> entities) {
-    documentSize = 0;
-    videoSize = 0;
-    imageSize = 0;
-    soundSize = 0;
-    for (var i = 0; i < entities.length; i++) {
-      if (entities[i].path.contains(".pdf") ||
-          entities[i].path.contains(".doc") ||
-          entities[i].path.contains(".txt") ||
-          entities[i].path.contains(".ppt") ||
-          entities[i].path.contains(".docx") ||
-          entities[i].path.contains(".pptx") ||
-          entities[i].path.contains(".xlsx") ||
-          entities[i].path.contains(".xls")) {
-        documentSize += entities[i].statSync().size / 1000000;
-      }
-      if (entities[i].path.contains(".mp4") ||
-          entities[i].path.contains(".mkv") ||
-          entities[i].path.contains(".avi") ||
-          entities[i].path.contains(".flv") ||
-          entities[i].path.contains(".wmv") ||
-          entities[i].path.contains(".mov") ||
-          entities[i].path.contains(".3gp") ||
-          entities[i].path.contains(".webm")) {
-        videoSize += entities[i].statSync().size / 1000000;
-      }
-      if (entities[i].path.contains(".jpg") ||
-          entities[i].path.contains(".jpeg") ||
-          entities[i].path.contains(".png") ||
-          entities[i].path.contains(".gif") ||
-          entities[i].path.contains(".bmp") ||
-          entities[i].path.contains(".webp")) {
-        imageSize += (entities[i].statSync().size / 1000000);
-      }
-      if (entities[i].path.contains(".mp3") ||
-          entities[i].path.contains(".wav") ||
-          entities[i].path.contains(".aac") ||
-          entities[i].path.contains(".ogg") ||
-          entities[i].path.contains(".wma") ||
-          entities[i].path.contains(".flac") ||
-          entities[i].path.contains(".m4a")) {
-        soundSize += entities[i].statSync().size / 1000000;
-      }
-    }
-
     update();
   }
 
@@ -208,7 +159,6 @@ class FilesController extends GetxController {
                         await getApplicationDocumentsDirectory();
 
                     String folderPath = path;
-                    print("folder path $folderPath");
                     try {
                       Directory folder = Directory(folderPath);
                       if (!await folder.exists()) {
@@ -313,8 +263,6 @@ class FilesController extends GetxController {
     );
   }
 
-  // alert dialog for exceptions
-
   Future<void> alert(BuildContext context, String message) async {
     return showDialog(
       context: context,
@@ -349,5 +297,53 @@ class FilesController extends GetxController {
         ),
       ),
     );
+  }
+
+  calculateSize(List<FileSystemEntity> entities) {
+    documentSize = 0;
+    videoSize = 0;
+    imageSize = 0;
+    soundSize = 0;
+    for (var i = 0; i < entities.length; i++) {
+      if (entities[i].path.contains(".pdf") ||
+          entities[i].path.contains(".doc") ||
+          entities[i].path.contains(".txt") ||
+          entities[i].path.contains(".ppt") ||
+          entities[i].path.contains(".docx") ||
+          entities[i].path.contains(".pptx") ||
+          entities[i].path.contains(".xlsx") ||
+          entities[i].path.contains(".xls")) {
+        documentSize += entities[i].statSync().size / 1000000;
+      }
+      if (entities[i].path.contains(".mp4") ||
+          entities[i].path.contains(".mkv") ||
+          entities[i].path.contains(".avi") ||
+          entities[i].path.contains(".flv") ||
+          entities[i].path.contains(".wmv") ||
+          entities[i].path.contains(".mov") ||
+          entities[i].path.contains(".3gp") ||
+          entities[i].path.contains(".webm")) {
+        videoSize += entities[i].statSync().size / 1000000;
+      }
+      if (entities[i].path.contains(".jpg") ||
+          entities[i].path.contains(".jpeg") ||
+          entities[i].path.contains(".png") ||
+          entities[i].path.contains(".gif") ||
+          entities[i].path.contains(".bmp") ||
+          entities[i].path.contains(".webp")) {
+        imageSize += (entities[i].statSync().size / 1000000);
+      }
+      if (entities[i].path.contains(".mp3") ||
+          entities[i].path.contains(".wav") ||
+          entities[i].path.contains(".aac") ||
+          entities[i].path.contains(".ogg") ||
+          entities[i].path.contains(".wma") ||
+          entities[i].path.contains(".flac") ||
+          entities[i].path.contains(".m4a")) {
+        soundSize += entities[i].statSync().size / 1000000;
+      }
+    }
+
+    update();
   }
 }

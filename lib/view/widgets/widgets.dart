@@ -10,7 +10,6 @@ import '../../utils/const.dart';
 Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
       height: 13.h,
       decoration: BoxDecoration(
-        // color: black,
         borderRadius: BorderRadius.circular(26),
         border: Border.all(color: Colors.grey, width: 0.5),
       ),
@@ -41,7 +40,7 @@ Widget storagePercentWidget(int totalStorage, int usedStorage) => Container(
             radius: 31.0,
             lineWidth: 5.0,
             percent: usedStorage / totalStorage,
-            // center: new Text("100%"),
+      
             progressColor: orange,
             backgroundColor: orage2,
           )
