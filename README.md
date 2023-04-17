@@ -1,16 +1,27 @@
-# file_manager_app
 
-A new Flutter project.
+# File Manager App
 
-## Getting Started
+A file manager app in Flutter is an application that allows users to browse, manage and organize files and folders on their devices. The app can provide features such as file search,file  and file deletion and creation
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### Key Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ - File browsing and management
+ - Search functionality to find files quickly
+ - Deletion of files and folders
+ - Cross-platform compatibility for desktop and mobile devices
+- Support for common file formats, such as images, audio, and video
+- Customizable file and folder view options
+- Ability to view file properties and metadata
+
+### Wireframe
+
+a visual representation of the app's user interface and functionality. It provides a high-level overview of the app design 
+
+![App Screenshot](https://github.com/Wadie-ess/file_manager_app2/blob/master/wairframe.png)
+### Screenshots & Showcase
+
+
+![App Screenshot](https://github.com/Wadie-ess/file_manager_app2/blob/master/showCase.png)
+
