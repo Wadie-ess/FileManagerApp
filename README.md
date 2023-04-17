@@ -1,5 +1,5 @@
 
-# File Manger App
+# File Manager App
 
 A file manager app in Flutter is an application that allows users to browse, manage and organize files and folders on their devices. The app can provide features such as file search,file  and file deletion and creation
 
@@ -19,7 +19,9 @@ A file manager app in Flutter is an application that allows users to browse, man
 
 a visual representation of the app's user interface and functionality. It provides a high-level overview of the app design 
 
+![App Screenshot](https://github.com/Wadie-ess/file_manager_app2/blob/master/wairframe.png)
 ### Screenshots & Showcase
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+![App Screenshot](https://github.com/Wadie-ess/file_manager_app2/blob/master/showCase.png)
 
