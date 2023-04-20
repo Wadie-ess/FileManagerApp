@@ -5,7 +5,7 @@ A file manager app in Flutter is an application that allows users to browse, man
 
 
 
-![App Screenshot](https://github.com/Wadie-ess/FileManagerApp/blob/master/filegithubgif.gif)
+![App Screenshot](https://github.com/Wadie-ess/FileManagerApp/blob/master/file.gif)
 
 ### Key Features
 
